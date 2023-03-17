@@ -1,0 +1,90 @@
+.container {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr 1fr;
+    grid-template-rows: 0.3fr 2.5fr 0.2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row dense;
+    grid-template-areas:
+        "nav nav nav"
+        "resulits test test"
+        "footer footer footer";
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "logo . navLinks";
+    grid-area: nav;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.navLinks {
+    grid-area: navLinks;
+}
+
+.resulits {
+    grid-area: resulits;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 0.2fr 2.6fr 0.2fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". footText .";
+    grid-area: footer;
+}
+
+.footText {
+    grid-area: footText;
+    text-align: center;
+}
+
+.test {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.4fr 0.2fr 1.4fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "pic"
+        "."
+        "text";
+    grid-area: test;
+}
+
+.pic {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "pic1 pic2 pic3";
+    grid-area: pic;
+}
+
+.pic1 {
+    grid-area: pic1;
+}
+
+.pic2 {
+    grid-area: pic2;
+}
+
+.pic3 {
+    grid-area: pic3;
+}
+
+.text {
+    grid-area: text;
+}

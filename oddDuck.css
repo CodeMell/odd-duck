@@ -72,6 +72,10 @@
         "pic1 pic2 pic3";
     grid-area: pic;
 }
+.pic img{
+    width: 460px;
+  max-height: 26rem;
+}
 
 .pic1 {
     grid-area: pic1;

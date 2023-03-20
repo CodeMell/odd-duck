@@ -64,7 +64,7 @@ const state = {
     let ul = document.querySelector('ul');
     for (let i = 0; i < state.allProductsArray.length; i++) {
       let li = document.createElement('li')
-      li.textContent = `${state.allProductsArray[i].name} was seen ${state.allProductsArray[i].views} and clicked${state.allProductsArray[i].clicks} times.`;
+      li.textContent = `${state.allProductsArray[i].name} was seen ${state.allProductsArray[i].views} times and clicked${state.allProductsArray[i].clicks} times.`;
       ul.appendChild(li);
     }
   }

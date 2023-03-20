@@ -4,7 +4,7 @@ let image2 = document.querySelector('.pic2 img:first-child');
 let image3 = document.querySelector('.pic3 img:first-child');
 
 let clicks = 0;
-let maxClicksAllowed = 19;
+let maxClicksAllowed = 24;
 
 const state = {
     allProductsArray: [],

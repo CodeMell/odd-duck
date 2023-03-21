@@ -61,7 +61,7 @@ function handleProductClick(event) {
     renderProducts();
   }
 }
-//y
+
 // function renderResults() {
 //   let ul = document.querySelector('ul');
 //   for (let i = 0; i < state.allProductsArray.length; i++) {
@@ -70,7 +70,6 @@ function handleProductClick(event) {
 //     ul.appendChild(li);
 //   }
 // }
-
 
 function renderChart() {
   let productNames = [];
@@ -81,15 +80,6 @@ function renderChart() {
     productNames.push(state.allProductsArray[i].name);
     productLikes.push(state.allProductsArray[i].clicks);
     productViews.push(state.allProductsArray[i].views);
-
-  function renderResults() {
-    let ul = document.querySelector('ul');
-    for (let i = 0; i < state.allProductsArray.length; i++) {
-      let li = document.createElement('li')
-      li.textContent = `${state.allProductsArray[i].name}: ${state.allProductsArray[i].clicks} votes`;
-      ul.appendChild(li);
-    }
-
   }
 
   const data = {

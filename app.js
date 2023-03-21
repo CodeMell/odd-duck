@@ -55,6 +55,7 @@ const state = {
     if (clicks === maxClicksAllowed) {
       productContainer.removeEventListener('click', handleProductClick);
       renderResults();
+      productContainer.className = 'no-voting';
     } else {
       renderProducts();
     }

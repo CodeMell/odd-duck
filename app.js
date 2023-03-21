@@ -61,7 +61,7 @@ function handleProductClick(event) {
     renderProducts();
   }
 }
-//y
+
 // function renderResults() {
 //   let ul = document.querySelector('ul');
 //   for (let i = 0; i < state.allProductsArray.length; i++) {

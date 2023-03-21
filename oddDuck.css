@@ -52,7 +52,6 @@
 
 .footText {
     grid-area: footText;
-    text-align: center;
 }
 
 .test {

@@ -80,6 +80,17 @@
 .pic img{
     width: 460px;
   max-height: 26rem;
+  border: 5px solid transparent;
+}
+
+.pic img:hover{
+  border: 5px solid yellow;
+  cursor: pointer;
+}
+
+.pic .no-voting img:hover{
+  border: 5px solid transparent;
+  cursor: none;
 }
 
 .pic1 {

@@ -33,9 +33,10 @@
     grid-area: resulits;
     border: 2px solid black;
     padding: 5%;
-    width: 30%;
+    width: 50%;
     height: 50%;
     margin: auto;
+    text-align: center;
 }
 
 .footer {

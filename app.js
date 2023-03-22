@@ -121,7 +121,7 @@ function renderChart() {
     },
   };
   let canvasChart = document.getElementById('productChart');
-  const myChart = new Chart(canvasChart, config);
+  data.myChart = new Chart(canvasChart, config);
   // saveData();
 }
 
@@ -163,22 +163,3 @@ function saveData() {
   localStorage.setItem("data", stringify);
   console.log(stringify);
 }
-
-function pageLoad() {
-  let saveddata = localStorage.getItem("data");
-  if (!saveddata) {
-    return;
-  }
-  loadData();
-  if (data.darkMode) {
-    enterDarkMode();
-  } else {
-    enterLightMode();
-  }
-  if (data.open !== null) {
-    details[data.open].setAttribute("open", "open")
-  }
-  commentBox.value = data.comment;
-}
-
-// pageLoad();

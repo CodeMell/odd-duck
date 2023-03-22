@@ -55,7 +55,7 @@ function handleProductClick(event) {
   if (clicks === maxClicksAllowed) {
     productContainer.removeEventListener('click', handleProductClick);
     // productContainer.className = 'no-voting';
-    renderResults();
+    //renderResults();
     renderChart();
   } else {
     renderProducts();

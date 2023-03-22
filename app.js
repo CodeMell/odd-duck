@@ -46,7 +46,7 @@ function handleProductClick(event) {
   }
   clicks++;
   let clickProduct = event.target.alt;
-  for (let i = 0; i < state.allProductsArray.length; i++) {
+  for (let i = 0; i < maxClicksAllowed; i++) {
     if (clickProduct === state.allProductsArray[i].name) {
       state.allProductsArray[i].clicks++;
       break;
@@ -121,6 +121,7 @@ function renderChart() {
   };
   let canvasChart = document.getElementById('productChart');
   const myChart = new Chart(canvasChart, config);
+  // saveData();
 }
 
 let bag = new Product('bag', './img/bag.jpg');
@@ -146,3 +147,37 @@ state.allProductsArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, 
 
 renderProducts();
 productContainer.addEventListener('click', handleProductClick);
+
+function loadData() {
+  let getData = localStorage.getItem("settings");
+  if (getData) {
+    console.log(getData); 
+    settings = JSON.parse(getData);
+    console.log(settings);
+  }
+}
+
+function saveData() {
+  let stringify = JSON.stringify(settings);
+  localStorage.setItem("settings", stringify);
+  console.log(stringify);
+}
+
+function pageLoad() {
+  let savedSettings = localStorage.getItem("settings");
+  if (!savedSettings) {
+    return;
+  }
+  loadData();
+  if (settings.darkMode) {
+    enterDarkMode();
+  } else {
+    enterLightMode();
+  }
+  if (settings.open !== null) {
+    details[settings.open].setAttribute("open", "open")
+  }
+  commentBox.value = settings.comment;
+}
+
+// pageLoad();

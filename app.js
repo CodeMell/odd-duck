@@ -169,7 +169,11 @@ function saveData() {
   localStorage.setItem("data", stringify);
   console.log(stringify);
 }
-
+// I tried so hard and got so far but in the end, it doesn't even matter
 function pageLoad() {
- 
+  let savedData = localStorage.getItem("data");
+  if (!savedData) {
+    return;
+  }
+  loadData();
 }

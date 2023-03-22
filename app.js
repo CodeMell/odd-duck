@@ -55,21 +55,22 @@ function handleProductClick(event) {
   if (clicks === maxClicksAllowed) {
     productContainer.removeEventListener('click', handleProductClick);
     // productContainer.className = 'no-voting';
-    // renderResults();
+    renderResults();
     renderChart();
   } else {
     renderProducts();
   }
 }
 
-// function renderResults() {
-//   let ul = document.querySelector('ul');
-//   for (let i = 0; i < state.allProductsArray.length; i++) {
-//     let li = document.createElement('li')
-//     li.textContent = `${state.allProductsArray[i].name}: ${state.allProductsArray[i].clicks} votes`;
-//     ul.appendChild(li);
-//   }
-// }
+function renderResults() {
+  let ul = document.querySelector('ul');
+  for (let i = 0; i < state.allProductsArray.length; i++) {
+    let li = document.createElement('li')
+    li.textContent = `${state.allProductsArray[i].name}: ${state.allProductsArray[i].clicks} votes`;
+    ul.appendChild(li);
+  }
+  
+}
 
 function renderChart() {
   let productNames = [];
@@ -149,35 +150,35 @@ renderProducts();
 productContainer.addEventListener('click', handleProductClick);
 
 function loadData() {
-  let getData = localStorage.getItem("settings");
+  let getData = localStorage.getItem("data");
   if (getData) {
     console.log(getData); 
-    settings = JSON.parse(getData);
-    console.log(settings);
+    data = JSON.parse(getData);
+    console.log(data);
   }
 }
 
 function saveData() {
-  let stringify = JSON.stringify(settings);
-  localStorage.setItem("settings", stringify);
+  let stringify = JSON.stringify(data);
+  localStorage.setItem("data", stringify);
   console.log(stringify);
 }
 
 function pageLoad() {
-  let savedSettings = localStorage.getItem("settings");
-  if (!savedSettings) {
+  let saveddata = localStorage.getItem("data");
+  if (!saveddata) {
     return;
   }
   loadData();
-  if (settings.darkMode) {
+  if (data.darkMode) {
     enterDarkMode();
   } else {
     enterLightMode();
   }
-  if (settings.open !== null) {
-    details[settings.open].setAttribute("open", "open")
+  if (data.open !== null) {
+    details[data.open].setAttribute("open", "open")
   }
-  commentBox.value = settings.comment;
+  commentBox.value = data.comment;
 }
 
 // pageLoad();

@@ -71,11 +71,10 @@ function renderResults() {
     li.textContent = `${state.allProductsArray[i].name}: ${state.allProductsArray[i].clicks} votes`;
     ul.appendChild(li);
   }
+  saveData();
   
 }
-let productData = {
-  
-};
+
 
 function renderChart() {
   let productNames = [];
@@ -153,6 +152,9 @@ state.allProductsArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, 
 renderProducts();
 productContainer.addEventListener('click', handleProductClick);
 
+// let data = {
+//    productData = [bag,],
+// };
 function loadData() {
   let getData = localStorage.getItem("data");
   if (getData) {
@@ -163,7 +165,7 @@ function loadData() {
 }
 
 function saveData() {
-  let stringify = JSON.stringify(data);
+  let stringify = JSON.stringify(state.allProductsArray);
   localStorage.setItem("data", stringify);
   console.log(stringify);
 }

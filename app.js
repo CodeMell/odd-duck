@@ -169,3 +169,7 @@ function saveData() {
   localStorage.setItem("data", stringify);
   console.log(stringify);
 }
+
+function pageLoad() {
+ 
+}

@@ -28,6 +28,7 @@ function renderProducts() {
 
   while (product1 === product2 || product3 === product2 || product3 === product1) {
     product2 = getRandomNumber();
+    product3 = getRandomNumber();
   }
   image1.src = state.allProductsArray[product1].src;
   image2.src = state.allProductsArray[product2].src;
@@ -38,6 +39,7 @@ function renderProducts() {
   state.allProductsArray[product1].views++;
   state.allProductsArray[product2].views++;
   state.allProductsArray[product3].views++;
+
 }
 
 function handleProductClick(event) {
@@ -46,7 +48,7 @@ function handleProductClick(event) {
   }
   clicks++;
   let clickProduct = event.target.alt;
-  for (let i = 0; i < state.allProductsArray.length; i++) {
+  for (let i = 0; i < maxClicksAllowed; i++) {
     if (clickProduct === state.allProductsArray[i].name) {
       state.allProductsArray[i].clicks++;
       break;
@@ -55,21 +57,24 @@ function handleProductClick(event) {
   if (clicks === maxClicksAllowed) {
     productContainer.removeEventListener('click', handleProductClick);
     // productContainer.className = 'no-voting';
-    // renderResults();
+    renderResults();
     renderChart();
   } else {
     renderProducts();
   }
 }
 
-// function renderResults() {
-//   let ul = document.querySelector('ul');
-//   for (let i = 0; i < state.allProductsArray.length; i++) {
-//     let li = document.createElement('li')
-//     li.textContent = `${state.allProductsArray[i].name}: ${state.allProductsArray[i].clicks} votes`;
-//     ul.appendChild(li);
-//   }
-// }
+function renderResults() {
+  let ul = document.querySelector('ul');
+  for (let i = 0; i < state.allProductsArray.length; i++) {
+    let li = document.createElement('li')
+    li.textContent = `${state.allProductsArray[i].name}: ${state.allProductsArray[i].clicks} votes`;
+    ul.appendChild(li);
+  }
+  saveData();
+  
+}
+
 
 function renderChart() {
   let productNames = [];
@@ -120,7 +125,7 @@ function renderChart() {
     },
   };
   let canvasChart = document.getElementById('productChart');
-  const myChart = new Chart(canvasChart, config);
+  myChart = new Chart(canvasChart, config);
 }
 
 let bag = new Product('bag', './img/bag.jpg');
@@ -146,3 +151,29 @@ state.allProductsArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, 
 
 renderProducts();
 productContainer.addEventListener('click', handleProductClick);
+
+// let data = {
+//    productData = [bag,],
+// };
+function loadData() {
+  let getData = localStorage.getItem("data");
+  if (getData) {
+    console.log(getData); 
+    data = JSON.parse(getData);
+    console.log(data);
+  }
+}
+
+function saveData() {
+  let stringify = JSON.stringify(state.allProductsArray);
+  localStorage.setItem("data", stringify);
+  console.log(stringify);
+}
+// I tried so hard and got so far but in the end, it doesn't even matter
+function pageLoad() {
+  let savedData = localStorage.getItem("data");
+  if (!savedData) {
+    return;
+  }
+  loadData();
+}

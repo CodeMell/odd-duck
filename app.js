@@ -28,6 +28,7 @@ function renderProducts() {
 
   while (product1 === product2 || product3 === product2 || product3 === product1) {
     product2 = getRandomNumber();
+    product3 = getRandomNumber();
   }
   image1.src = state.allProductsArray[product1].src;
   image2.src = state.allProductsArray[product2].src;
@@ -38,6 +39,7 @@ function renderProducts() {
   state.allProductsArray[product1].views++;
   state.allProductsArray[product2].views++;
   state.allProductsArray[product3].views++;
+
 }
 
 function handleProductClick(event) {
@@ -55,7 +57,7 @@ function handleProductClick(event) {
   if (clicks === maxClicksAllowed) {
     productContainer.removeEventListener('click', handleProductClick);
     // productContainer.className = 'no-voting';
-    //renderResults();
+    renderResults();
     renderChart();
   } else {
     renderProducts();
@@ -71,6 +73,9 @@ function renderResults() {
   }
   
 }
+let productData = {
+  
+};
 
 function renderChart() {
   let productNames = [];
@@ -121,8 +126,7 @@ function renderChart() {
     },
   };
   let canvasChart = document.getElementById('productChart');
-  data.myChart = new Chart(canvasChart, config);
-  // saveData();
+  myChart = new Chart(canvasChart, config);
 }
 
 let bag = new Product('bag', './img/bag.jpg');

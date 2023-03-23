@@ -48,7 +48,7 @@ body{
 .test {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.6fr 2.2fr;
+    grid-template-rows: 0.7fr 2.2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:

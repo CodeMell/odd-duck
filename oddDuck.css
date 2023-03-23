@@ -130,6 +130,9 @@ body{
 .text {
     grid-area: text;
 }
+.Chat{
+    background-color: white;
+}
 
 .footer {
     display: grid;

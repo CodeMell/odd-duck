@@ -112,7 +112,7 @@ function renderChart() {
       borderWidth: 1
     }]
   };
-
+  Chart.defaults.color = 'rgb(255, 255, 255)';
   const config = {
     type: 'bar',
     data: data,

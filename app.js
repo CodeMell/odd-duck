@@ -72,7 +72,7 @@ function renderResults() {
     ul.appendChild(li);
   }
   saveData();
-  
+
 }
 
 
@@ -112,7 +112,7 @@ function renderChart() {
       borderWidth: 1
     }]
   };
-
+  Chart.defaults.color = 'rgb(255, 255, 255)';
   const config = {
     type: 'bar',
     data: data,
@@ -136,17 +136,17 @@ let breakfast = new Product('breakfast', './img/breakfast.jpg');
 let bubblegum = new Product('bubblegum', './img/bubblegum.jpg');
 let chair = new Product('chair', './img/chair.jpg');
 let cthulhu = new Product('cthulhu', './img/cthulhu.jpg');
-let dog_duck = new Product('dog-duck', './img/dog-duck.jpg');
+let dog_duck = new Product('dog duck', './img/dog-duck.jpg');
 let dragon = new Product('dragon', './img/dragon.jpg');
 let pen = new Product('pen', './img/pen.jpg');
-let pet_sweep = new Product('pet-sweep', './img/pet-sweep.jpg');
+let pet_sweep = new Product('pet sweep', './img/pet-sweep.jpg');
 let scissors = new Product('scissors', './img/scissors.jpg');
 let shark = new Product('shark', './img/shark.jpg');
 let sweep = new Product('sweep', './img/sweep.png');
 let tauntaun = new Product('tauntaun', './img/tauntaun.jpg');
 let unicorn = new Product('unicorn', './img/unicorn.jpg');
-let water_can = new Product('water-can', './img/water-can.jpg');
-let wine_glass = new Product(' wine-glass', './img/wine-glass.jpg');
+let water_can = new Product('water can', './img/water-can.jpg');
+let wine_glass = new Product(' wine glass', './img/wine-glass.jpg');
 state.allProductsArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dog_duck, dragon, pen, pet_sweep, scissors, shark, sweep, tauntaun, unicorn, water_can, wine_glass);
 
 renderProducts();
@@ -158,7 +158,7 @@ productContainer.addEventListener('click', handleProductClick);
 function loadData() {
   let getData = localStorage.getItem("data");
   if (getData) {
-    console.log(getData); 
+    console.log(getData);
     data = JSON.parse(getData);
     console.log(data);
   }

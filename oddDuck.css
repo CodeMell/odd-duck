@@ -1,11 +1,12 @@
-body{
+body {
     background-color: darkslateblue;
     color: white;
 }
+
 .container {
     display: grid;
     grid-template-columns: 0.5fr 1fr 1fr;
-    grid-template-rows: 0.05fr 1fr 0.05fr;
+    grid-template-rows: 0.05fr 2fr 0.05fr;
     gap: 0px 0px;
     grid-auto-flow: row dense;
     grid-template-areas:
@@ -24,14 +25,33 @@ body{
     grid-template-areas:
         "logo . navLinks";
     grid-area: nav;
+    border: 4px solid black;
+    background-color: darkslategrey;
+   
 }
 
 .logo {
     grid-area: logo;
+    display: inline-flex;
 }
 
 .navLinks {
     grid-area: navLinks;
+    text-align: center;
+    margin: auto;
+    padding: 3%;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+}
+
+.navLinks a:hover {
+    background-color: yellow;
+    color: black;
+    border: 3px solid rgba(33, 56, 56, 0.998);
 }
 
 .resulits {
@@ -48,14 +68,16 @@ body{
 .test {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.4fr 0.2fr 1.4fr;
+    grid-template-rows: 0.7fr 2.2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
         "pic"
-        "."
         "text";
     grid-area: test;
+    border: 3px solid black;
+    padding: 10px;
+    margin: auto;
 }
 
 .pic {
@@ -88,6 +110,9 @@ body{
 
 .pic1 {
     grid-area: pic1;
+    background-color: red;
+    text-align: center;
+    margin: auto;
 }
 
 /* .pic1 img:hover {
@@ -102,6 +127,9 @@ body{
 
 .pic2 {
     grid-area: pic2;
+    background-color: green;
+    text-align: center;
+    margin: auto;
 }
 
 /* .pic2 img:hover {
@@ -116,6 +144,9 @@ body{
 
 .pic3 {
     grid-area: pic3;
+    background-color: blue;
+    text-align: center;
+    margin: auto;
 }
 
 /* .pic3 img:hover {
@@ -126,11 +157,11 @@ body{
 .pic3 .no-voting img:hover {
     border: 5px solid transparent;
     cursor: none;
-}
+} */
 
 .text {
     grid-area: text;
-} */
+}
 
 .footer {
     display: grid;
@@ -141,6 +172,8 @@ body{
     grid-template-areas:
         ". footText .";
     grid-area: footer;
+    background-color: gray;
+    border-top: 2px solid black;
 }
 
 .footText {

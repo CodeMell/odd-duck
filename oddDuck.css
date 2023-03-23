@@ -5,7 +5,7 @@ body{
 .container {
     display: grid;
     grid-template-columns: 0.5fr 1fr 1fr;
-    grid-template-rows: 0.05fr 1fr 0.05fr;
+    grid-template-rows: 0.05fr 2fr 0.05fr;
     gap: 0px 0px;
     grid-auto-flow: row dense;
     grid-template-areas:
@@ -129,9 +129,6 @@ body{
 
 .text {
     grid-area: text;
-}
-.Chat{
-    background-color: white;
 }
 
 .footer {

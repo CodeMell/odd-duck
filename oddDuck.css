@@ -48,12 +48,11 @@ body{
 .test {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.4fr 0.2fr 1.4fr;
+    grid-template-rows: 0.6fr 2.2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
         "pic"
-        "."
         "text";
     grid-area: test;
 }
@@ -126,11 +125,11 @@ body{
 .pic3 .no-voting img:hover {
     border: 5px solid transparent;
     cursor: none;
-}
+} */
 
 .text {
     grid-area: text;
-} */
+}
 
 .footer {
     display: grid;

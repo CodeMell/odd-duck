@@ -72,7 +72,7 @@ function renderResults() {
     ul.appendChild(li);
   }
   saveData();
-  
+
 }
 
 
@@ -158,7 +158,7 @@ productContainer.addEventListener('click', handleProductClick);
 function loadData() {
   let getData = localStorage.getItem("data");
   if (getData) {
-    console.log(getData); 
+    console.log(getData);
     data = JSON.parse(getData);
     console.log(data);
   }
